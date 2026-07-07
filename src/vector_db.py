@@ -45,3 +45,12 @@ class VectorDB:
             embeddings=self._encode([c["text"] for c in chunks]),
             metadatas=[{"source": c["source"]} for c in chunks],
         )
+
+    def retrieve(self, question, n=config.N_RESULTS):
+        results = self._collection.query(
+            query_embeddings=self._encode([question]), n_results=n
+        )
+        return [
+            {"text": text, "metadata": metadata}
+            for text, metadata in zip(results["documents"][0], results["metadatas"][0])
+        ]
