@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Generated Chroma vector DB (rebuilt from data/05_corpus_rag.csv)
+chroma_db/
+
 # C extensions
 *.so
 
@@ -216,3 +219,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+CLAUDE.md
+tp.md
