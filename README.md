@@ -9,13 +9,20 @@ Trois briques, chacune dans son propre fichier, plus config et prompts séparés
 
 | Fichier | Rôle | Statut |
 |---|---|---|
-| `config.py` | Constantes (modèles, chemins) | ✅ |
-| `data/corpus.py` | Charge le corpus depuis `data/05_corpus_rag.csv` | ✅ |
-| `vector_db.py` | `VectorDB` — création/rechargement ChromaDB + `retrieve` | ⏳ |
-| `moderator.py` | `Moderator` — détection de prompt injection (JSON) | ⏳ |
-| `rag.py` | `RAG` — orchestration (modération → retrieval → LLM) | ⏳ |
+| `src/config.py` | Constantes (modèles, chemins) | ✅ |
+| `src/corpus.py` | Charge le corpus depuis `data/05_corpus_rag.csv` | ✅ |
+| `src/vector_db.py` | `VectorDB` — création/rechargement ChromaDB + `retrieve` | ✅ |
+| `src/moderator.py` | `Moderator` — détection de prompt injection (JSON) | ⏳ |
+| `src/rag.py` | `RAG` — orchestration (modération → retrieval → LLM) | ⏳ |
 | `prompts/*.txt` | Prompts système (RAG et modérateur) | ⏳ |
 | `main.py` | Script de démo bout en bout | ⏳ |
+| `tests/test_vector_db.py` | 4 tests : création, reload, erreur, retrieve | ✅ |
+
+## Tests
+
+```bash
+pytest -v
+```
 
 ## Installation
 

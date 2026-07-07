@@ -1,6 +1,6 @@
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 EMBEDDING_MODEL = "distiluse-base-multilingual-cased-v2"
 LLM_MODEL = "llama-3.3-70b-versatile"
