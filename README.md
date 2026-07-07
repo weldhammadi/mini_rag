@@ -17,7 +17,7 @@ Trois briques, chacune dans son propre fichier, plus config et prompts séparés
 | `src/rag.py` | `RAG(Agent)` — orchestration (modération → retrieval → LLM) | ✅ |
 | `prompts/moderator_system.txt` | Prompt système du modérateur | ✅ |
 | `prompts/rag_system.txt` | Prompt système du RAG (`{{Chunks}}`) | ✅ |
-| `main.py` | Script de démo bout en bout | ⏳ |
+| `main.py` | Script de démo bout en bout (questions du §6 du tp.md) | ✅ (écrit, vérification bloquée par une 403 réseau Groq ponctuelle) |
 | `tests/test_vector_db.py` | 4 tests : création, reload, erreur, retrieve | ✅ |
 | `tests/test_moderator.py` | 2 tests : question légitime, injection | ✅ |
 | `tests/test_rag.py` | 5 tests : templating, réponse correcte, refus injection, hors périmètre | ✅ |
