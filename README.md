@@ -12,11 +12,14 @@ Trois briques, chacune dans son propre fichier, plus config et prompts séparés
 | `src/config.py` | Constantes (modèles, chemins) | ✅ |
 | `src/corpus.py` | Charge le corpus depuis `data/05_corpus_rag.csv` | ✅ |
 | `src/vector_db.py` | `VectorDB` — création/rechargement ChromaDB + `retrieve` | ✅ |
-| `src/moderator.py` | `Moderator` — détection de prompt injection (JSON) | ⏳ |
+| `src/agent.py` | `Agent` — classe de base (client Groq, `read_file`) | ✅ |
+| `src/moderator.py` | `Moderator(Agent)` — détection de prompt injection (JSON) | ✅ |
 | `src/rag.py` | `RAG` — orchestration (modération → retrieval → LLM) | ⏳ |
-| `prompts/*.txt` | Prompts système (RAG et modérateur) | ⏳ |
+| `prompts/moderator_system.txt` | Prompt système du modérateur | ✅ |
+| `prompts/rag_system.txt` | Prompt système du RAG (`{{Chunks}}`) | ⏳ |
 | `main.py` | Script de démo bout en bout | ⏳ |
 | `tests/test_vector_db.py` | 4 tests : création, reload, erreur, retrieve | ✅ |
+| `tests/test_moderator.py` | 2 tests : question légitime, injection | ✅ |
 
 ## Tests
 
